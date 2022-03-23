@@ -4,12 +4,12 @@
 # - https://docs.docker.com/engine/userguide/containers/dockerimages/
 # - https://github.com/dockerfile/java/blob/master/oracle-java8/Dockerfile
 
-imageTag=openkbs/docker-spark-bde2020-zeppelin
+imageTag=shubhamaggarwal890/docker-spark-bde2020-zeppelin
 #version=2.1.0-hadoop2.8-hive-java8
 
 ZEPPELIN_DOWNLOAD_URL=http://apache.cs.utah.edu/zeppelin
 #ZEPPELIN_DOWNLOAD_URL=http://www-us.apache.org/dist/zeppelin
-#ZEPPELIN_VERSION=0.8.1 
+#ZEPPELIN_VERSION=0.8.1
 #ZEPPELIN_PORT=8080 
 ZEPPELIN_INSTALL_DIR=/usr/lib 
 

@@ -8,9 +8,11 @@ ARG APACHE_SPARK_VERSION=2.4.0
 ARG APACHE_HADOOP_VERSION=2.8.0 
 ARG SPARK_MASTER="spark://spark-master:7077" 
 # http://mirror.cc.columbia.edu/pub/software/apache/zeppelin/zeppelin-0.9.0-preview2/zeppelin-0.9.0-preview2-bin-all.tgz
-ARG ZEPPELIN_DOWNLOAD_URL=http://mirror.cc.columbia.edu/pub/software/apache/zeppelin
+#ARG ZEPPELIN_DOWNLOAD_URL=http://mirror.cc.columbia.edu/pub/software/apache/zeppelin
 #ARG ZEPPELIN_DOWNLOAD_URL=http://apache.cs.utah.edu/zeppelin
 #ARG ZEPPELIN_DOWNLOAD_URL=http://www-us.apache.org/dist/zeppelin
+ARG ZEPPELIN_DOWNLOAD_URL=https://downloads.apache.org/zeppelin
+
 ARG ZEPPELIN_INSTALL_DIR=/usr/lib 
 ARG ZEPPELIN_HOME=${ZEPPELIN_INSTALL_DIR}/zeppelin 
 ARG ZEPPELIN_VERSION=${ZEPPELIN_VERSION:-0.9.0-preview2}
@@ -34,7 +36,7 @@ ENV ZEPPELIN_PORT=${ZEPPELIN_PORT}
 #### ---- Python 3 ----
 COPY requirements.txt ./
 RUN apt-get update -y \
-  && apt-get install -y curl net-tools build-essential git wget unzip vim python3-pip python3-setuptools python3-dev python3-numpy python3-scipy python3-pandas python3-matplotlib \
+  && apt-get install -y curl net-tools openjdk-8-jdk build-essential git wget unzip vim python3-pip python3-setuptools python3-dev python3-numpy python3-scipy python3-pandas python3-matplotlib \
   && pip3 install -r requirements.txt \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
